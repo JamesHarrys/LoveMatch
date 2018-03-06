@@ -1,14 +1,27 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="danger">
+    <ion-title text-center class="brand-name">Love Match</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="content-bloc">
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Name A</ion-label>
+      <ion-input type="text" [(ngModel)]="nameA"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Name B</ion-label>
+      <ion-input type="text" [(ngModel)]="nameB"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-card text-center class="content">
+    <ion-card-header>
+      {{ nameA || '- - ?' }} <ion-icon ios="ios-heart" md="md-heart" color="danger"></ion-icon> {{ nameB || '- - ?' }}
+    </ion-card-header>
+    <ion-card-content class="score">
+      {{ score }}%
+    </ion-card-content>
+  </ion-card>
 </ion-content>
